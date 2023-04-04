@@ -1,0 +1,223 @@
+
+/*Seletor universal para resetar todas as propriedades de margin e padding entre outros, padroes do navegador*/
+*{
+    margin: 0;
+    padding: 0;
+
+    /*O box-sizing com o valor border-box faz com que o navegador não calcule a dimensão de um elemento somando bordas e margens com altura e largura*/
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: white; 
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color:rgba(255,255,255,0.1);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover:rgba(0,0,0,0.02);
+    --highlight-color:rgba(255,255,255,0.2);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light{
+    --text-color: black; 
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color:rgba(0, 0, 0, 0.1);
+    --surface-color: rgba(0, 0, 0, 0.1);
+    --surface-color-hover:rgba(255,255,255,0.05);
+    --highlight-color:rgba(0,0,0,0.1);
+    --switch-bg-url: url(./assets/sun.svg);
+}
+
+body{
+    background-image:var(--bg-url);  
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: 100vh;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    /* color: #ffffff; */
+    color: var(--text-color);
+}
+
+/*Container*/
+
+#container {
+    /* Largura e Altura do container que deixa o background responsivo*/
+    width: 100%;
+    max-width: 588px;
+    /* height: 710px;     */    
+    /*  
+        Bordas vermelhas somente para vizualizar a caixa do container
+        border: 1px solid red;
+     */
+    margin: 56px auto 0;
+    padding: 0 24px;
+}
+
+/*Profile*/
+
+#profile{
+    text-align: center;
+    padding: 24px;
+    /* padding-top: 0px;  */
+}
+
+/*Ao definir "#profile img" , estarei buscando a tag img dentro de profile*/
+#profile img{
+    width: 112px;
+    border-radius: 50%;        
+}
+
+#profile p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/*Switch*/
+
+#switch{
+    /* As instruções abaixo dizem respeito ao posicionamento de elementos do layout */
+
+    /* border: 1px solid red; */
+    position: relative;
+    width: 64px;
+    /* Margin para centralizar o track (span) e o botão (button) */
+    margin: 4px auto;
+    
+}
+
+
+#switch button{
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 0;
+    border-radius: 50%;
+    /*Optei por não usar o background na forma Shorthand para facilitar a vizualização das propriedades*/
+    background-image: var(--switch-bg-url);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* As instruções abaixo dizem respeito ao posicionamento de elementos do layout */
+
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+    /* Não entendi muito bem a questão do posicionamento (comandos abaixo) */
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+/* Os comandos abaixo são responsaveis pela mudança do botão ligado/desligado */
+.light #switch button{
+    right: 0;
+    left: initial;
+}
+
+#switch span{
+
+    display: block;
+    width: 64px;
+    height: 24px;
+    /* border: 1px solid red; */
+    background: var(--surface-color);
+    border:1px solid var(--stroke-color);
+    /* A instrução webkit não funciona */
+    /* -webkit-backdrop-filter: blur(4px); */
+    border-radius: 9999px;
+}
+
+
+/*Lnks - Lista*/
+
+ul{
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 24px 0;
+}
+
+ul li a{
+    display: flex;
+    /*Alinha para o centro horizontalmente */
+    align-items: center;
+    
+    /*Alinha para o centro verticalmente*/
+    justify-content: center;
+    
+    /*Configura os espaçamentos internos na forma (shorthand) */
+    padding: 16px 24px;
+
+    background: var(--surface-color);
+
+    border: 1px solid var(--stroke-color);
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: background 0.5s;
+
+
+}
+
+ul li a:hover{
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+/*Social Links*/
+
+#social-links{
+    font-size: 40px;
+    padding: 24px 0;
+    display: flex;
+    /* gap: 32px; */
+
+    justify-content: center;
+}
+
+#social-links a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    transition: 0.2s;
+    border-radius: 50%;
+}
+
+#social-links a:hover{
+    background: var(--highlight-color);
+    
+}
+
+/*Rodapé*/
+
+footer{
+    text-align: center;
+    padding: 24px 0;
+    font-size: 14px;
+}
+
+/* Media Queries */
+/* Responsável por ajustar certos elementos em relação e determinados tamanhos de tela (responsividade) */
+
+@media (min-width: 700px){
+    :root{
+        --bg-url: url(./assets/bg-desktop.jpg);
+    }
+
+    .light{
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- <html lang="pt-br" class="light"> -->
+<html lang="pt-br" class="">   
+<head>
+    <!--As tags link abaixo importam a fonte inter do google fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tag meta responsável por possibilitar o uso de Media Queries -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento  HTML5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="container">
+        <div id="profile">
+            <img src="./assets/avatar.jpg" alt="Avatar sem óculos">    
+            
+            <p>@carlosportela</p>
+        </div>
+
+        <div id="switch">
+            <button onclick="toggleMode()"></button>
+            <span></span>
+        </div>
+
+        <ul>
+            <li>
+                <a target="_blank" href="#">Link 1</a>
+            </li>
+
+            <li>
+                <a target="_blank" href="#">Link 2</a>
+            </li>
+
+            <li>
+                <a target="_blank" href="#">Link 3</a>
+            </li>
+
+            <li>
+                <a target="_blank" href="#">Link 4</a>
+            </li>
+        </ul>
+        
+        <div id="social-links">
+            <!-- <ion-icon name="heart"></ion-icon> -->
+
+            <a href="http://www.github.com" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+            </a>
+
+            <a href="http://www.instagram.com" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+
+            <a href="http://www.youtube.com" target="_blank">
+                <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+
+            <a href="http://www.linkedin.com" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+            
+        </div>
+
+        <footer>
+            Adaptado de  <a href="http://www.rocketseat.com.br" target="_blank">Rocketseat</a>            
+        </footer>
+    </div>
+
+    
+    <!--Scripts abaixo para podermos usar os ícones de "Ion Icons" em ionic.io-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
+
+    <script src="./script.js"></script>
+</body>
+</html>
