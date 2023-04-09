@@ -8,7 +8,7 @@ function toggleMode(){
     //     html.classList.add("light")
     // }
 
-    // A instrução abaixo executa a mesma funcionalidade da condicional acima, usando uma função pronta do proprio JSs
+    // A instrução abaixo executa a mesma funcionalidade da condicional acima, usando uma função pronta do proprio JS
     html.classList.toggle("light")
 
     //Mudando a imagem em função da classe "light"
